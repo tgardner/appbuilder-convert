@@ -10,7 +10,8 @@ var program = require('commander'),
     parser = require('gitignore-parser'),
     recursive = require('recursive-readdir'),
     xmlbuilder = require('xmlbuilder'),
-    xslt = require('node_xslt');
+    xslt = require('node_xslt'),
+    xmldoc = require('xmldoc');
 
 function list(val) {
     return val.split(',');
@@ -29,7 +30,7 @@ var source = program.source || __dirname,
     tasks = program.tasks;
 
 var logger = require('./lib/logger')(chalk, program.debug),
-    converter = require('./lib/converter')(source, dest, logger, async, fs, path, cp, parser, recursive, xmlbuilder, xslt);
+    converter = require('./lib/converter')(source, dest, logger, async, fs, path, cp, parser, recursive, xmlbuilder, xslt, xmldoc);
 
 var available = converter.tasks();
 logger.debug("Available tasks: %s", available.join(', '));
