@@ -1,7 +1,26 @@
 {
   "name": "appbuilder-convert",
-  "version": "1.0.0",
-  "description": "Tool for converting Telerik AppBuilder projects to Cordova",
+  "version": "0.1.0",
+  "description": "A utility for converting Telerik AppBuilder projects to Apache Cordova",
+  "homepage": "https://github.com/tgardner/appbuilder-convert/issues",
+  "author": {
+    "name": "Trent Gardner",
+    "email": "trent.gardner@gmail.com",
+    "url": "http://trentgardner.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tgardner/appbuilder-convert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tgardner/appbuilder-convert/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tgardner/appbuilder-convert/blob/master/LICENSE.md"
+    }
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +39,8 @@
     "recursive-readdir": "^1.2.1",
     "xmlbuilder": "^2.6.2",
     "xmldoc": "^0.3.0"
-  }
+  },
+  "keywords": [
+    "appbuilder", "telerik", "apache", "cordova"
+  ]
 }
