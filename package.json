@@ -25,6 +25,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bin": {
+    "appbuilder-convert": "index.js"
+  },
+  "preferGlobal": true,
   "author": "Trent Gardner",
   "license": "MIT",
   "dependencies": {
