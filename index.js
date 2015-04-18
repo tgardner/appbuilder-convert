@@ -25,8 +25,8 @@ program
     .option('--debug')
     .parse(process.argv);
 
-var source = program.source || __dirname,
-    dest = program.dest || path.join(__dirname, 'cordova'),
+var source = program.source || process.cwd(),
+    dest = program.dest || path.join(process.cwd(), 'cordova'),
     tasks = program.tasks;
 
 var logger = require('./lib/logger')(chalk, program.debug),
