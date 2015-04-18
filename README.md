@@ -1,7 +1,7 @@
 # appbuilder-convert
 
 > A utility for converting a [Telerik AppBuilder CLI](http://www.telerik.com/appbuilder/command-line-interface) project to an [Apache Cordova](https://cordova.apache.org/) project.
-> Alternatively you can simply use is as a method for building your AppBuilder projects locally.
+> Alternatively you can simply use this as a method for building your AppBuilder projects locally.
 
 **Currently only supports Android and iOS platforms**
 
