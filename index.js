@@ -8,22 +8,30 @@ var program = require('commander'),
     cp = require('child_process'),
     fs = require('fs-extra'),
     parser = require('gitignore-parser'),
-    recursive = require('recursive-readdir');
+    recursive = require('recursive-readdir'),
+    xmlbuilder = require('xmlbuilder'),
+    xslt = require('node_xslt');
+
+function list(val) {
+    return val.split(',');
+}
 
 program
     .version(pkg.version)
     .option('-s, --source <source>', 'The appbuilder project root')
     .option('-d, --dest <dest>', 'The destination directory for the Cordova project to be created')
+    .option('-t, --tasks [items]', 'A comma separated lists of tasks. Run with --debug flag to see list of available tasks', list)
     .option('--debug')
     .parse(process.argv);
 
 var source = program.source || __dirname,
-    dest = program.dest || path.join(__dirname, 'cordova');
+    dest = program.dest || path.join(__dirname, 'cordova'),
+    tasks = program.tasks;
 
 var logger = require('./lib/logger')(chalk, program.debug),
-    converter = require('./lib/converter')(source, dest, logger, async, fs, path, cp, parser, recursive);
+    converter = require('./lib/converter')(source, dest, logger, async, fs, path, cp, parser, recursive, xmlbuilder, xslt);
 
-var tasks = converter.tasks();
-logger.debug("Runnings tasks: %s", tasks.join(', '));
+var available = converter.tasks();
+logger.debug("Available tasks: %s", available.join(', '));
 
-converter.run();
+converter.run(tasks);
