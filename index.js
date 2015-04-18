@@ -19,7 +19,8 @@ function list(val) {
 
 program
     .version(pkg.version)
-    .option('-s, --source <source>', 'The appbuilder project root')
+    .usage('--source <source> --dest <dest>')
+    .option('-s, --source <source>', 'The appbuilder project directory')
     .option('-d, --dest <dest>', 'The destination directory for the Cordova project to be created')
     .option('-t, --tasks [items]', 'A comma separated lists of tasks. Run with --debug flag to see list of available tasks', list)
     .option('--debug')
