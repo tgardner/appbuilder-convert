@@ -1,6 +1,6 @@
 {
   "name": "appbuilder-convert",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A utility for converting Telerik AppBuilder projects to Apache Cordova",
   "homepage": "https://github.com/tgardner/appbuilder-convert",
   "author": {
